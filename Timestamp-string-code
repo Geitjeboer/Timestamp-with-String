@@ -1,0 +1,47 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+
+#returns a string wtih the date and time
+def timestamp ():
+
+    from datetime import datetime
+    day = datetime.now()
+    today = day.strftime ("on %m/%d/%y at %H:%M")
+    return today
+
+
+
+
+#returns a comment with a tech and nurse input
+#comment can be edited in text file comment.txt
+def commentcreate():
+    testin = input ('Test:')
+    techin = input ('tech:')
+    nursein = input ('person notified:')
+    critcom = open ('comment','r')
+    commentlist = critcom.readlines() 
+    comment = commentlist[0]
+    critcom.close
+    timestampin = timestamp()
+    return comment.format(tech = techin,nurse = nursein,timestamp = timestampin, test = testin)
+
+
+
+
+
+#pastes comment from clipboard
+def comment_out():
+    import pyperclip
+    strcom = commentcreate()
+    pyperclip.copy(strcom)
+    print(pyperclip.paste())
+
+
+
+
+
+comment_out()
+
+
+
