@@ -1,0 +1,7 @@
+CVBN;-{test} By {tech} to {nurse} {timestamp}
+
+Program returns the above comment with input requested for tech and nurse.
+The time stamp is automatically generated.
+
+you can change the comment to whatever you like, but it must be the first line of the text file.
+
